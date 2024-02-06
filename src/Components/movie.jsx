@@ -1,32 +1,34 @@
 import React, { useState } from "react";
+
 export default function Movie() {
-  const [movieId, setMovieId] = useState("");
+  const [movieName, setMovieName] = useState("");
   const [movieData, setMovieData] = useState(null);
   const [error, setError] = useState(null);
 
   const API_KEY = "89640e6b0020f2b0e5bbb57a6cdd55ae"; // Your TMDb API key
-  const API_URL = `https://api.themoviedb.org/3/movie/`;
+  const API_URL = `https://api.themoviedb.org/3/search/movie`;
 
   const handleInputChange = (event) => {
-    setMovieId(event.target.value);
+    setMovieName(event.target.value);
   };
 
   const fetchData = () => {
-    if (!movieId) {
-      setError("Please enter a movie ID");
+    if (!movieName) {
+      setError("Please enter a movie name");
       return;
     }
 
-    console.log("Fetching movie data for", API_URL + movieId);
-    fetch(API_URL + movieId + `?api_key=${API_KEY}`)
+    console.log("Fetching movie data for", API_URL + `?api_key=${API_KEY}&query=${encodeURIComponent(movieName)}`);
+    fetch(API_URL + `?api_key=${API_KEY}&query=${encodeURIComponent(movieName)}`)
       .then((response) => response.json())
       .then((data) => {
-        if (data.status_message) {
-          setError(data.status_message);
+        if (data.results.length === 0) {
+          setError("No movie found with that name");
           setMovieData(null);
         } else {
           setError(null);
-          setMovieData(data);
+          // For simplicity, just take the first result
+          setMovieData(data.results[0]);
         }
       })
       .catch((error) => {
@@ -42,9 +44,9 @@ export default function Movie() {
       <div className="input-container">
         <input
           type="text"
-          value={movieId}
+          value={movieName}
           onChange={handleInputChange}
-          placeholder="Enter movie ID"
+          placeholder="Enter movie name"
         />
         <button onClick={fetchData}>Get</button>
       </div>
