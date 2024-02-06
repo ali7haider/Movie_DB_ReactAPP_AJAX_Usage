@@ -2,7 +2,7 @@
 Usage of AJAX(Asynchronous JavaScript and XML) in Modern Web Applications
 # Usage of AJAX
 This project is aimed at demonstrating the concept of AJAX, a set of web development techniques used on the client side to create asynchronous web applications. By using AJAX, web applications can send and retrieve data from a server 
-asynchronously (in the background) without interfering with the display and behavior of the existing page. This simple web application built in react web application fetches movie data from `https://www.themoviedb.org/` and allows users to search movies based on movie id.
+asynchronously (in the background) without interfering with the display and behavior of the existing page. This simple web application built in react web application fetches movie data from `https://www.themoviedb.org/` and allows users to search movies based on movie name.
 # How to Run the Project Locally
 - Before running the application locally, make sure you have the following installed:
   - Node.js
