@@ -1,10 +1,10 @@
 # Movie DB React APP With AJAX
 Usage of AJAX(Asynchronous JavaScript and XML) in Modern Web Applications
 # Usage of AJAX
-This project is aimed at demonstrating the concept of AJAX, a set of web development techniques used on the client-side to create asynchronous web applications. By using AJAX, web applications can send and retrieve data from a server 
-asynchronously (in the background) without interfering with the display and behavior of the existing page. This simple web application built in react web application fetch movies data from `https://www.themoviedb.org/` and allow user to search movie on the basis of movie id.
+This project is aimed at demonstrating the concept of AJAX, a set of web development techniques used on the client side to create asynchronous web applications. By using AJAX, web applications can send and retrieve data from a server 
+asynchronously (in the background) without interfering with the display and behavior of the existing page. This simple web application built in react web application fetches movie data from `https://www.themoviedb.org/` and allows users to search movies based on movie id.
 # How to Run the Project Locally
-- ## Before running the application locally, make sure you have the following installed:
+- Before running the application locally, make sure you have the following installed:
   - Node.js
   - npm (Node Package Manager)
 To run the project locally, follow these steps:
@@ -27,8 +27,7 @@ In an app that retrieves data from a movie database, AJAX can be utilized for va
 - Youtube
 - Chatgpt
 # Live Website link
-  https://inquisitive-platypus-483f2c.netlify.app/
-
+  https://ajaxmoviedb.netlify.app/
 
     
 
